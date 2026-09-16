@@ -24,7 +24,7 @@ Write the concept from the repository outward:
 4. proposed contracts and call stacks;
 5. rollout, testing, risks, and estimate.
 
-Do not invent architecture. Unknowns remain open questions.
+Do not invent architecture, requirements, APIs, files, call stacks, or missing decisions. Unknowns remain open questions.
 
 ## Branch selection
 
@@ -42,7 +42,7 @@ Ask one question at a time. If the answer can be found by inspecting the reposit
 
 Use this when the user already has a technical concept, design doc, spec, architecture proposal, or implementation plan and wants feedback, validation, gaps, risks, or a readiness review.
 
-Completion criterion: choose the path from actual available context, not from assumptions.
+Completion criterion: choose the path from actual available context, not from assumptions. Missing architectural or product decisions are marked as open questions instead of filled in.
 
 ## Path A: Convert available context to a concept
 
@@ -78,7 +78,7 @@ Capture:
 - risks;
 - open questions.
 
-Mark uncertain requirements as open questions. Do not silently choose desired behavior.
+Mark uncertain requirements and missing decisions as open questions. Do not silently choose desired behavior, APIs, ownership, or runtime behavior.
 
 Completion criterion: every requirement is grounded in user-provided context, repository evidence, or an explicit open question.
 
