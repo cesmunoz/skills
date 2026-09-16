@@ -7,6 +7,8 @@ description: >
 
 # Create Pull Request Skill
 
+This skill is the canonical pull request flow.
+
 You MUST follow these steps in order to create a pull request.
 
 ## Step 1: Validate Branch
