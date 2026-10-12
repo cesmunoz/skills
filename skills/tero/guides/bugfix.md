@@ -11,5 +11,6 @@ Be scientific. Every line that ships traces to runtime evidence. A change that m
 | 3. Plan the fix | lead | Bugfix | Plan the change before writing it. Name the cause and the smallest change that turns it off. |
 | 4. Fix | bug-fix | Bugfix | Make only that change. Nothing more. |
 | 5. Check | lead | Bugfix | Reproduce it again on the same surface. Say whether the fix actually corrected it. Inconclusive is not a pass. |
-| 6. Open a draft | lead | Bugfix | Open the change as a draft. |
-| 7. Report | lead | Bugfix | Say what was broken, the cause, the fix, and how you verified. |
+| 6. Sequence | lead | Bugfix | Put the failing repro in history before the fix when a cheap local test can carry the bug. Skip that when the test would be expensive, integration-heavy, or unclear. |
+| 7. Open a draft | lead | Bugfix | Open the change as a draft. |
+| 8. Report | lead | Bugfix | Say what was broken, the cause, the fix, and how you verified. |
