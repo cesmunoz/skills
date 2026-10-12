@@ -13,4 +13,4 @@ Be scientific. Every line that ships traces to runtime evidence. A change that m
 | 5. Check | lead | Bugfix | Reproduce it again on the same surface. Say whether the fix actually corrected it. Inconclusive is not a pass. |
 | 6. Sequence | lead | Bugfix | Put the failing repro in history before the fix when a cheap local test can carry the bug. Skip that when the test would be expensive, integration-heavy, or unclear. |
 | 7. Open a draft | lead | Bugfix | Open the change as a draft. |
-| 8. Report | lead | Bugfix | Say what was broken, the cause, the fix, and how you verified. |
+| 8. Report | lead | Bugfix | Say what was broken, the cause, the fix, and how you verified. Paste the failing output and the passing output from that same repro, verbatim. |
