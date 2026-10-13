@@ -2,7 +2,9 @@
 name: tero
 description: >
   Tero is the working mode. Enter it with /tero.
-  Everything lives in the guides. A guide holds the steps, and each step names the role that does the work.
+  A guide is the ordered steps for one kind of task. A role is who does a step.
+  The guide names the role on each step. The role does not repeat the steps.
+  The lead is this chat and runs the guide. Every other role is spawned with the model in ~/.agents/tero-roles.md.
   Use for tero, /tero, or when a new task matches a guide and needs that rigor.
 disable-model-invocation: true
 mode: true
@@ -11,50 +13,38 @@ color: yellow
 reminder: New task that matches a guide, or real rigor needed -> /tero. Casual turn or an opt-out -> don't.
 ---
 
-# tero
+# Tero
 
-Tero is the working mode. `/tero` enters it. Everything lives in the guides.
+Tero is the working mode. `/tero` enters it.
 
-## Install
+## Requirement
 
-Add the `skills/tero` folder where Cursor loads skills.
+- A guide holds the steps. A role holds the person who does one of those steps.
+- Read this skill before using tero.
 
-## Get started
+## Commands
 
-1. You type `/tero` and say what you need, in a few words.
-2. Tero reads that message and picks the guide that fits.
-3. Tero makes a task list. The guide's steps go on it first, copied as written, before any other task.
-4. Tero works that list. It loops a step when the step is not finished yet.
-5. If a step needs you, Tero leaves it on the list with `skip:` and a short reason, and waits. It does not drop the step quietly.
-6. Tero closes when the work is done. The reply says which rule changed a choice, and it includes what the guide asked to report.
-
-## Usage
-
-```
-/tero the save button does nothing after the form is valid. reproduce it, then fix it.
-```
+| Command | Description | File |
+| --- | --- | --- |
+| /tero | Enters tero mode. |
+| /tero init | Initializes the roles. | roles.md |
 
 ## Rules
 
-These are the rules you follow. The guides hold the work.
-
-- In the reply, name each rule that changed a decision and the choice it changed.
-- Match the message to a guide in the table. Do not invent a guide.
-- Put that guide's steps on the list first, copied as written.
-- A step you do not do stays on the list with `skip:` and the reason.
-- If you can see the answer by running it, do not ask. Ask when the step needs the user.
-
-## Roles
-
-Setup writes [`models.md`](models.md). One line per role. `inherit-parent` means that role runs on the parent chat model.
-
-| Role | Model |
-| --- | --- |
-| lead | inherit-parent |
-| bug-fix | inherit-parent |
+1. You type `/tero` and say what you need, in a few words.
+2. Tero reads that message and picks the guide that fits the task.
+3. Tero is the lead. Read `roles/lead.md`. Copy the guide's steps into a list and work down that list.
+4. Do not start a step before the one above it is done, skipped, or waiting on the user.
+5. If a step needs input from the user, it will leave it on the list with `need-input:` and the reason, and waits. It does not drop the step quietly.
+6. If a step is skipped, it will leave it on the list with `skip:` and the reason.
+7. If a step is finished, it will leave it on the list with `done:` and the reason.
+8. A step marked `lead` stays in this chat. A step that names another role spawns that role: model from `~/.agents/tero-roles.md`, instructions from `roles/<role>.md`, the step text, and the earlier results that step needs. Mark it `spawn-subagent:` and the reason.
+9. It will close when the work is done.
 
 ## Guides
 
+A guide is the order of work for one kind of task. It does not choose the model.
+
 | Guide | For |
 | --- | --- |
-| [Bugfix](guides/bugfix.md) | A reported defect to reproduce, root-cause, and fix with runtime evidence. |
+| [bug-fix](guides/bug-fix.md) | A reported defect to reproduce, root-cause, and fix with runtime evidence. |
