@@ -34,11 +34,11 @@ Tero is the working mode. `/tero` enters it.
 1. You type `/tero` and say what you need, in a few words.
 2. Tero reads that message and picks the guide that fits the task.
 3. Tero is the lead. Read `roles/lead.md`. Copy the guide's steps into a list and work down that list.
-4. Do not start a step before the one above it is done, skipped, or waiting on the user.
-5. If a step needs input from the user, it will leave it on the list with `need-input:` and the reason, and waits. It does not drop the step quietly.
+4. Do not start a step before the one above it is done or skipped.
+5. Do the step. Do not ask "should I?" first. Spawn the named role without asking. A reversible choice is made and reported. Mark `need-input:` and wait only when the user is the only one who can act: a login the role cannot pass, an irreversible write (force-push, deleting data, a message to a customer), or a product choice no run can settle. Do not drop that step quietly.
 6. If a step is skipped, it will leave it on the list with `skip:` and the reason.
 7. If a step is finished, it will leave it on the list with `done:` and the reason.
-8. A step marked `lead` stays in this chat. A step that names another role spawns that role: model from `~/.agents/tero-roles.md`, instructions from `roles/<role>.md`, the step text, and the earlier results that step needs. Mark it `spawn-subagent:` and the reason.
+8. A step marked `lead` stays in this chat. A step that names another role is spawned immediately: model from `~/.agents/tero-roles.md`, instructions from `roles/<role>.md`, the step text, and the earlier results that step needs. Mark it `spawn-subagent:` and the reason. Do not wait for approval to spawn.
 9. It will close when the work is done.
 
 ## Guides
