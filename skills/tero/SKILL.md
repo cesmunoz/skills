@@ -51,3 +51,4 @@ A guide is the order of work for one kind of task. It does not choose the model.
 | [bug-fix](guides/bug-fix.md) | A reported defect to reproduce, root-cause, and fix with runtime evidence. |
 | [investigation](guides/investigation.md) | A read-only question about how something works, whether a claim holds, or which option to pick. |
 | [night-shift](guides/night-shift.md) | Unattended overnight work down a backlog, one draft PR per item, with a morning handoff. |
+| [ui-from-reference](guides/ui-from-reference.md) | Make a UI follow a reference product or screens the user named. |
