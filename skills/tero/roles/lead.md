@@ -23,6 +23,14 @@ Read the role's chain in `~/.agents/tero-roles.md`. The format is in [roles.md](
 - No role line, or nothing in it available: walk `default:`. Still nothing: `fallback:`. Still nothing: your own model.
 - Say the pick in the note: `spawn-subagent: researcher on grok-4.7-medium (fallback; gpt-6.1-sol not available here)`.
 
+## When a role fails
+
+This applies to every guide. A spawned role that fails or is interrupted:
+
+1. Retry once on the same model.
+2. Then retry once on the next model in its chain.
+3. Then mark the step `blocked:` with the reason.
+
 ## What you leave to the others
 
 The technical call, the research, the shape of the change, the code, the review, the run, and the write-up belong to the role named on that step.
