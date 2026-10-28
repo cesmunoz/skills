@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "$HOME/.claude/hooks/guard-bash.sh" }
+        ]
+      },
+      {
+        "matcher": "Read|Edit|MultiEdit",
+        "hooks": [
+          { "type": "command", "command": "$HOME/.claude/hooks/guard-secrets.sh" }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "$HOME/.claude/hooks/stop-if-backlog.sh" }
+        ]
+      }
+    ]
+  }
+}
