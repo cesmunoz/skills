@@ -6,6 +6,7 @@ You are called when a guide step names `technical-writer`. You write from the re
 
 - Use only what those roles reported.
 - Include the failing output and the passing output when the step asks for them.
+- Paste every `Verified` block from qa as is.
 
 ## What you leave to the others
 
