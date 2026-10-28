@@ -4,7 +4,7 @@ description: >
   Tero is the working mode. Enter it with /tero.
   A guide is the ordered steps for one kind of task. A role is who does a step.
   The guide names the role on each step. The role does not repeat the steps.
-  The lead is this chat and runs the guide. Every other role is spawned with the model in ~/.agents/tero-roles.md.
+  The lead is this chat and runs the guide. Every other role is spawned with the first available model in its chain in ~/.agents/tero-roles.md.
   Use for tero, /tero, or when a new task matches a guide and needs that rigor.
 disable-model-invocation: true
 mode: true
@@ -38,7 +38,7 @@ Tero is the working mode. `/tero` enters it.
 5. Do the step. Do not ask "should I?" first. Spawn the named role without asking. A reversible choice is made and reported. Mark `need-input:` and wait only when the user is the only one who can act: a login the role cannot pass, an irreversible write (force-push, deleting data, a message to a customer), or a product choice no run can settle. Do not drop that step quietly.
 6. If a step is skipped, it will leave it on the list with `skip:` and the reason.
 7. If a step is finished, it will leave it on the list with `done:` and the reason.
-8. A step marked `lead` stays in this chat. A step that names another role is spawned immediately: model from `~/.agents/tero-roles.md`, instructions from `roles/<role>.md`, the step text, and the earlier results that step needs. When the step says one per slice, spawn that many of the role in the same turn, and wait until every one has replied. Mark it `spawn-subagent:` and the reason. Do not wait for approval to spawn.
+8. A step marked `lead` stays in this chat. A step that names another role is spawned immediately: the first available model in that role's chain in `~/.agents/tero-roles.md` (see `roles.md`), instructions from `roles/<role>.md`, the step text, and the earlier results that step needs. When the step says one per slice, spawn that many of the role in the same turn, and wait until every one has replied. Mark it `spawn-subagent:` with the model picked and the reason. Do not wait for approval to spawn.
 9. It will close when the work is done.
 
 ## Guides
