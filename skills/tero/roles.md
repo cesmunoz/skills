@@ -54,6 +54,7 @@ At spawn time, the lead does this. See [roles/lead.md](roles/lead.md).
 | architect | high | One shot at the plan. | [roles/architect.md](roles/architect.md) | Names the change before anyone writes it. |
 | developer | medium | The plan is already set. | [roles/developer.md](roles/developer.md) | Makes the change it was handed. |
 | code-reviewer | medium | Compares a diff with a plan. | [roles/code-reviewer.md](roles/code-reviewer.md) | Says whether the change matches the plan. |
+| code-reviewer-cross | medium | A second family catches other misses. | [roles/code-reviewer.md](roles/code-reviewer.md) | Same as code-reviewer. Only with `--cross`. |
 | qa | low | Mechanical driving. | [roles/qa.md](roles/qa.md) | Runs it and says what happened. |
 | technical-writer | low | Writes from results already found. | [roles/technical-writer.md](roles/technical-writer.md) | Writes up what the other roles already found. |
 

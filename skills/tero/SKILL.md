@@ -28,6 +28,7 @@ Tero is the working mode. `/tero` enters it.
 | --- | --- | --- |
 | /tero | Enters tero mode. |
 | /tero init | Initializes the roles. | roles.md |
+| /tero ... --cross | Review step runs two reviewers on different model families. Off by default. Also "cross review". | roles/code-reviewer.md |
 
 ## Rules
 

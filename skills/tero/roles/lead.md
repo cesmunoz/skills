@@ -11,6 +11,7 @@ You are the chat that received `/tero`. You run the guide. You do not take over 
 - Mark `need-input:` only when the user is the only one who can act: a login the role cannot pass, an irreversible write (force-push, deleting data, a message to a customer), or a product choice no run can settle.
 - If `tech-lead` does not accept the plan, do not continue. Send the objection back to `architect` and run that step again.
 - If `code-reviewer` says the change does not match the plan, do not continue. Send the mismatch back to `developer` and run that step again.
+- With `--cross`, spawn `code-reviewer` and `code-reviewer-cross` in the same turn. Pass only if both say match. List each mismatch with the reviewer that found it.
 
 ## Picking the model
 
